@@ -1,113 +1,184 @@
-import Image from 'next/image'
+import Hero from "@/components/ui/hero";
+import Navbar from "@/components/ui/navbar";
+import Section from "@/components/ui/section";
+import SplitScreen from "@/components/ui/splitscreen";
+import StyledHeading from "@/components/ui/styled-heading";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Navbar />
+      <Hero />
+      <Section>
+        <div className="flex flex-col md:flex-row text-center">
+          <div className="md:px-4 lg:px-24 py-24 md:py-0 flex flex-col flex-1 gap-8">
+            <span className="text-2xl font-bold">Fullstack Dev</span>
+            <p>
+              I enjoy building projects that captivate my interest. Be it a
+              large project with friends or a small script for myself.
+            </p>
+          </div>
+          <div className="md:px-4 lg:px-24 py-24 md:py-0 flex flex-col flex-1 gap-8 border-y md:border-y-0 md:border-x">
+            <span className="text-2xl font-bold">Curiosity-Driven</span>
+            <p>
+              Relentlessly curious and adaptable, striving to be the best
+              version of myself, especially in coding.
+            </p>
+          </div>
+          <div className="md:px-4 lg:px-24 py-24 md:py-0 flex flex-col flex-1 gap-8">
+            <span className="text-2xl font-bold">Tech Enthusiast</span>
+            <p>
+              Immersed in Vim and thriving in the terminal, I prioritize
+              learning tools that optimizing my workflow and developer
+              experience.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </Section>
+      <Section id="projects">
+        <StyledHeading>
+          <h3 className="text-4xl font-bold mb-24">Projects</h3>
+        </StyledHeading>
+        <div className="flex flex-col gap-32">
+          {/* Project: Tectonic-bot */}
+          <SplitScreen
+            title="Tectonic Bot"
+            description="Discord chat bot actively developed and led by me, with continuous feedback from the community and our small development team. This project is also hands down the one I've learned from the most."
+            after="The bot serves as a robust solution for managing our OSRS community of over 350 users. It automates various tasks, helps with moderation, provides real-time updates, manages events, and enhances user experience, and remains active to this day."
+            listings={[
+              "TypeScript for type safety",
+              "Prisma for database management",
+              "PostgreSQL for data storage",
+              "Docker for containerization",
+              "Hosted on Railway with automated CI/CD",
+              "Over 350 active users",
+              "Comprehensive documentation",
+              "Heavy focus on reliability",
+            ]}
+            links={{ link: "https://github.com/Miconen/tectonic-bot" }}
+          />
+          {/* Project: MNK */}
+          <SplitScreen
+            title="MNK"
+            titleNote="(Realtime chat app)"
+            description="Livechat project that utilizes SignalR to send and receive real time messages. Supports multiple chat rooms and secure user profiles with self built authorization utilizing JWTs. I was personally in charge of our backend and integration with our frontend, as well as project organization."
+            after={
+              <>
+                MNK was a school project co-authored by{" "}
+                <a
+                  href="https://github.com/Kiiskii"
+                  className="text-foreground/80 underline"
+                >
+                  Anton Kiiski
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://github.com/NikoSoder"
+                  className="text-foreground/80 underline"
+                >
+                  Niko Söder
+                </a>{" "}
+                and myself. Split into a multi-repo for easier DevOps and
+                version control.
+              </>
+            }
+            listings={[
+              "TypeScript & Angular Frontend",
+              ".NET / C# Backend",
+              "User authentication (login & register functionality)",
+              "User authorization with JWTs",
+              "Automated testing using Azure",
+              "EF Core for database management",
+              "PostgreSQL for data storage",
+              "Docker for containerization",
+            ]}
+            links={[
+              {
+                link: "https://github.com/Miconen/MNK-frontend",
+                content: "View Frontend",
+              },
+              {
+                link: "https://github.com/Miconen/MNK-backend",
+                content: "View Backend",
+              },
+            ]}
+          />
+          {/* Project: OKP-2 */}
+          <SplitScreen
+            title="OKP-2"
+            titleNote="(Ohjelmisto Kehitys Projekti 2)"
+            description="Full-stack school project for consuming the MyHelsinki Open API. The user is able to view places of interest, activities and events around the user if they consent to the app using their location. Alternatively the user can search for a specific location."
+            after="If the user registers for an account (not required), they gain the ability to favorite and track any place, activity or event until it expires. The app also can also display the weather around you with the OpenWeatherMap API."
+            listings={[
+              "TypeScript & Angular Frontend",
+              ".NET / C# Backend",
+              "Utilizes Google Maps, OpenWeatherMap API and MyHelsinki Open API",
+              "User authentication (login & register functionality)",
+              "User authorization with JWTs",
+              "EF Core for database management",
+              "PostgreSQL for data storage",
+              "Docker for containerization",
+              "Hosted on Railway with automated CI/CD",
+            ]}
+            links={{ link: "https://github.com/Miconen/OKP-2" }}
+          />
+        </div>
+      </Section>
+      <Section id="skills">
+        <StyledHeading>
+          <h3 className="text-4xl font-bold mb-24">Skills</h3>
+        </StyledHeading>
+        <div className="flex flex-col gap-4 [&>span]:text-2xl [&>span]:font-bold">
+          <span>Languages & Frameworks:</span>
+          <ul>
+            <li>TypeScript</li>
+            <li>Angular</li>
+            <li>.NET / C#</li>
+          </ul>
+            <span>Backend Development:</span>
+          <ul>
+            <li>Database Management (Prisma, EF Core)</li>
+            <li>PostgreSQL</li>
+            <li>Docker (Containerization)</li>
+          </ul>
+            <span>API Integration:</span>
+          <ul>
+            <li>Google Maps API</li>
+            <li>OpenWeatherMap API</li>
+            <li>MyHelsinki Open API</li>
+          </ul>
+            <span>Authentication & Authorization:</span>
+          <ul>
+            <li>User Authentication (Login & Register Functionality)</li>
+            <li>User Authorization with JWTs</li>
+          </ul>
+            <span>Infrastructure & Hosting:</span>
+          <ul>
+            <li>Railway (Hosting Platform) with CI/CD</li>
+            <li>Docker (Containerization)</li>
+          </ul>
+          <span>Testing:</span>
+          <ul>
+            <li>Automated Testing using Azure</li>
+          </ul>
+          <span>Additional Features:</span>
+          <ul>
+            <li>Account-Based Features (Favorite & Track)</li>
+            <li>Real-time Messaging (SignalR)</li>
+            <li>Weather Display Integration</li>
+          </ul>
+        </div>
+      </Section>
+      <Section id="aboutme">
+        <StyledHeading>
+          <h3 className="text-4xl font-bold mb-24">About Me</h3>
+        </StyledHeading>
+      </Section>
+      <Section id="contact">
+        <StyledHeading>
+          <h3 className="text-4xl font-bold mb-24">Contact</h3>
+        </StyledHeading>
+      </Section>
     </main>
-  )
+  );
 }
