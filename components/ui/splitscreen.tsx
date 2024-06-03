@@ -1,23 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { GitHub } from "./icons";
 import Image from "next/image";
-
-type Project = {
-  title: string;
-  titleNote?: string;
-  description: string | React.ReactNode;
-  listings: string[];
-  after: string | React.ReactNode;
-  links: ProjectLink | ProjectLink[];
-  imagePath?: string;
-  imageAlt?: string;
-  imageSide?: "left" | "right";
-};
-
-type ProjectLink = {
-  link: string;
-  content?: string;
-};
+import { Project, ProjectLink } from "@/types/project";
 
 const DEFAULT_IMAGE_PATH = "/default.webp";
 const DEFAULT_IMAGE_ALT = "Default project image";
