@@ -68,7 +68,7 @@ const projects: Project[] = [
     links: [{ link: "https://github.com/Miconen/tectonic-bingo-bot" }],
   },
   {
-    title: "MNK",
+    title: "MNK App",
     description:
       "Live chat project that utilizes SignalR to send and receive real time messages. Supports multiple chat rooms and secure user profiles with self built authorization utilizing JWTs. I was personally in charge of our backend and integration with our frontend, as well as project organization.",
     after: "Hello world!",

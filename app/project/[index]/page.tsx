@@ -1,22 +1,34 @@
-import Hero from "@/components/ui/hero";
-import Navbar from "@/components/ui/navbar";
-import Section from "@/components/ui/section";
-import StyledHeading from "@/components/ui/styled-heading";
-import Skills from "@/components/ui/skills";
-import Projects from "@/components/ui/projects";
+import projects from "@/app/projects";
 import ContactForm from "@/components/ui/contact-form";
+import Navbar from "@/components/ui/navbar";
+import ProjectHeader from "@/components/ui/project-header";
+import Section from "@/components/ui/section";
+import { Achievements, Technologies } from "@/components/ui/splitscreen";
+import StyledHeading from "@/components/ui/styled-heading";
 import Link from "next/link";
 
-export default function Home() {
+export default function Project({ params }: { params: { index: string } }) {
+  if (!params.index) return;
+  if (Array.isArray(params.index)) return;
+
+  const projectIndex = parseInt(params.index);
+  if (!Number.isSafeInteger(projectIndex)) return;
+  if (projectIndex === 0) return;
+
+  const project = projects.at(projectIndex - 1);
+  if (!project) return;
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Navbar>
-        <Link href="/#skills">Skills</Link>
-        <Link href="/#projects">Projects</Link>
-        <Link href="/#aboutme">About me</Link>
-        <Link href="/#contact">Contact</Link>
+        {project.achievements && (
+          <Link href={`./${projectIndex}#achievements`}>Achievements</Link>
+        )}
+        <Link href={`./${projectIndex}#technologies`}>Technologies</Link>
+        <Link href={`./${projectIndex}#short`}>Info</Link>
+        <Link href={`./${projectIndex}#contact`}>Contact</Link>
       </Navbar>
-      <Hero />
+      <ProjectHeader project={project} />
       <Section>
         <div className="flex flex-col md:flex-row text-center">
           <div className="md:px-4 lg:px-24 py-24 md:py-0 flex flex-col flex-1 gap-8">
@@ -43,21 +55,21 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section id="skills">
+      <Section id="achievements" condition={Boolean(project.achievements)}>
         <StyledHeading>
-          <h3 className="text-4xl font-bold mb-24">Skills</h3>
+          <h3 className="text-4xl font-bold mb-24">Achievements</h3>
         </StyledHeading>
-        <Skills />
+        <Achievements noTitle project={project} />
       </Section>
-      <Section id="projects">
+      <Section id="technologies">
         <StyledHeading>
-          <h3 className="text-4xl font-bold mb-24">Featured projects</h3>
+          <h3 className="text-4xl font-bold mb-24">Technologies</h3>
         </StyledHeading>
-        <Projects />
+        <Technologies noTitle project={project} />
       </Section>
-      <Section id="aboutme">
+      <Section id="short">
         <StyledHeading>
-          <h3 className="text-4xl font-bold mb-24">About Me</h3>
+          <h3 className="text-4xl font-bold mb-24">In short...</h3>
         </StyledHeading>
         <div className="flex w-full md:w-2/3 gap-4">
           <div className="inline-block w-1 justify-between bg-gray-500"></div>
@@ -70,29 +82,8 @@ export default function Home() {
             >
               <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
             </svg>
-            <p>
-              Hello! I’m Mico, a passionate developer from Finland with over six
-              years of experience in coding, which I consider more of a hobby
-              than just a job. My journey in the tech world has primarily
-              revolved around web development, but I’ve found a real passion for
-              backend development.
-            </p>
-
-            <p>
-              Throughout my career, I’ve had the pleasure of working within a
-              vibrant community of over 350 people, where I developed community
-              management and event-centered software. Collaborating with other
-              skilled developers around the globe and receiving feedback from
-              our users has not only sharpened my technical skills but also
-              deepened my appreciation for community-driven projects.
-            </p>
-
-            <p>
-              When I’m not coding, you can find me jogging or playing the same
-              video games I enjoy building software around. Feel free to reach
-              out if you’d like to connect or chat about projects, ideas, or
-              career opportunities!
-            </p>
+            <p>{project.description}</p>
+            <p>{project.after}</p>
           </div>
         </div>
       </Section>

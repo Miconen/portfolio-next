@@ -6,13 +6,19 @@ import { Project, ProjectLink } from "@/types/project";
 const DEFAULT_IMAGE_PATH = "/default.webp";
 const DEFAULT_IMAGE_ALT = "Default project image";
 
-function Achievements({ project }: { project: Project }) {
+export function Achievements({
+  project,
+  noTitle = false,
+}: {
+  project: Project;
+  noTitle?: boolean;
+}) {
   if (!project.achievements) return;
   if (project.achievements.length === 0) return;
 
   return (
     <div className="my-4">
-      <h5 className="text-white">Achievements</h5>
+      {!noTitle && <h5 className="text-white">Achievements</h5>}
       <ul className="list-disc text-sm px-4 font-bold font-mono [&>*]:py-1 md:[&>*]:py-1">
         {project.achievements.map((listing) => (
           <li key={listing}>{listing}</li>
@@ -22,12 +28,18 @@ function Achievements({ project }: { project: Project }) {
   );
 }
 
-function Technologies({ project }: { project: Project }) {
+export function Technologies({
+  project,
+  noTitle = false,
+}: {
+  project: Project;
+  noTitle?: boolean;
+}) {
   if (project.technologies.length === 0) return;
 
   return (
     <div className="my-4">
-      <h5 className="text-white">Technologies</h5>
+      {!noTitle && <h5 className="text-white">Technologies</h5>}
       <ul className="list-disc text-sm px-4 font-mono [&>*]:py-1 md:[&>*]:py-1">
         {project.technologies.map((listing) => (
           <li key={listing}>{listing}</li>

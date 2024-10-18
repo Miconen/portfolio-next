@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { GitHub, LinkedIn } from "./icons";
 
-export default function Navbar() {
+export default function Navbar({ children }: { children: React.ReactNode }) {
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-14 items-center">
@@ -34,31 +34,8 @@ export default function Navbar() {
                     <a className="mr-6 flex items-center space-x-2" href="/">
                         <span className="font-bold">Mico Rintala</span>
                     </a>
-                    <nav className="flex items-center space-x-6 text-sm font-medium">
-                        <a
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                            href="/#skills"
-                        >
-                            Skills
-                        </a>
-                        <a
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                            href="/#projects"
-                        >
-                            Projects
-                        </a>
-                        <a
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                            href="/#aboutme"
-                        >
-                            About me
-                        </a>
-                        <a
-                            className="transition-colors hover:text-foreground/80 text-foreground/60"
-                            href="/#contact"
-                        >
-                            Contact
-                        </a>
+                    <nav className="flex items-center space-x-6 text-sm font-medium [&_a]:transition-colors [&_a]:hover:text-foreground/80 [&_a]:text-foreground/60">
+                        {children}
                     </nav>
                 </div>
 
