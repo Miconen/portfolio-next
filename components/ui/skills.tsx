@@ -33,7 +33,7 @@ export default function Skills(skills: Skill) {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>API Interation</AccordionTrigger>
+        <AccordionTrigger>API Integration</AccordionTrigger>
         <AccordionContent>
           <ul>
             <li>RESTful APIs</li>
@@ -45,7 +45,7 @@ export default function Skills(skills: Skill) {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-4">
-        <AccordionTrigger>Authentication & Authorization:</AccordionTrigger>
+        <AccordionTrigger>Authentication & Authorization</AccordionTrigger>
         <AccordionContent>
           <ul>
             <li>User Authentication (Login & Register Functionality)</li>

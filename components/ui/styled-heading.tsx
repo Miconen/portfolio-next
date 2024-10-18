@@ -1,10 +1,10 @@
-export default function StyledHeading({ children }: { children: React.ReactNode; }) {
+export default function StyledHeading({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative w-fit">
             <div className="relative z-10 fit-content">{children}</div>
             <svg
                 aria-hidden={true}
-                className="h-16 w-16 -rotate-3 absolute top-2 right-4 z-9"
+                className={`h-16 w-16 -rotate-3 absolute top-2 right-4 z-9`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 800 600"
             >

@@ -1,16 +1,22 @@
 export type Project = {
   title: string;
   titleNote?: string;
-  description: React.ReactNode;
-  listings: string[];
-  after: React.ReactNode;
-  links: ProjectLink | ProjectLink[];
+  description: string;
+  achievements?: string[];
+  technologies: string[];
+  after: string;
+  links: ProjectLink[];
   imagePath?: string;
   imageAlt?: string;
-  imageSide?: "left" | "right";
+  contributors?: Contributor[];
 };
 
 export type ProjectLink = {
   link: string;
   content?: string;
+};
+
+export type Contributor = {
+  name: string;
+  link: string;
 };

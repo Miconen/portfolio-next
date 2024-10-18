@@ -37,7 +37,7 @@ export default function Hero() {
                         </a>
                         <a href="https://github.com/Miconen">
                             <Button className="w-fit flex gap-2" variant={"outline"}>
-                                <GitHub /> GitHub
+                                <GitHub /> Projects
                             </Button>
                         </a>
                     </div>
