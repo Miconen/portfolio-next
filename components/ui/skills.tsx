@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export default function Skills(skills: Skill) {
+export default function Skills() {
   return (
     <div className="flex flex-col gap-4 [&>span]:text-2xl [&>span]:font-bold">
     <Accordion type="single" collapsible className="w-full">
