@@ -40,13 +40,8 @@ function Technologies({ project }: { project: Project }) {
 function Buttons({ links }: { links: ProjectLink[] }) {
   return links.map((button) => {
     return (
-      <div className="flex flex-col gap-4 md:flex-row">
-        <a
-          href={button.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          key={button.link}
-        >
+      <div className="flex flex-col gap-4 md:flex-row" key={button.link}>
+        <a href={button.link} target="_blank" rel="noopener noreferrer">
           <Button variant={"outline"} className="w-fit flex gap-2">
             <GitHub />
             {button.content || "View Project"}
