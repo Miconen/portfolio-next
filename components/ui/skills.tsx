@@ -28,11 +28,12 @@ export default function Skills() {
         <li>JWTs</li>
       </ul>
 
-      <h3>???</h3>
+      <h3>Technologies<h3>
       <ul>
         <li>Docker (Containerization)</li>
         <li>CI/CD Pipelines & Devops</li>
         <li>Strong with UNIX systems</li>
+        <li>Scrum and Agile methodologies</li>
       </ul>
 
       <h3>Soft skills</h3>
