@@ -1,10 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
 export default function Skills() {
   return (
     <div className="flex flex-col gap-4 [&>h3]:text-2xl [&>h3]:font-bold [&>ul>ul]:ml-4">
