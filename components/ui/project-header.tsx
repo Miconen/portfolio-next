@@ -18,7 +18,7 @@ export default function ProjectHeader({ project }: { project: Project }) {
           <div className="flex gap-4 mt-4">
             {project.links.map((link) => {
               return (
-                <a href={link.link}>
+                <a href={link.link} key={link.link}>
                   <Button className="w-fit flex gap-2" variant={"outline"}>
                     <GitHub /> {link.content ?? "Project"}
                   </Button>
