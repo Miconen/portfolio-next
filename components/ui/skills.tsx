@@ -28,7 +28,7 @@ export default function Skills() {
         <li>JWTs</li>
       </ul>
 
-      <h3>Technologies<h3>
+      <h3>Technologies</h3>
       <ul>
         <li>Docker (Containerization)</li>
         <li>CI/CD Pipelines & Devops</li>
